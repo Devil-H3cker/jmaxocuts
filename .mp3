@@ -1,0 +1,30 @@
+#!/bin/bash
+red='\e[1;31m'
+green='\e[1;32m'
+white='\e[1;37m'
+yellow='\e[1;33m'
+blue='\e[1;34m'
+
+clear
+echo""
+echo ""
+echo -e $green"List of files: "
+echo ""
+ls
+echo ""
+echo -e $blue
+figlet Mp3 Converter
+echo ""
+echo -e $white" • codded by jmax , all rights reserved @ https://www.github.com/jmaxojan"
+echo ""
+echo ""
+echo -e $yellow
+read -p "Choose the video's name with the extension eg: video.mp4  > " input
+echo ""
+read -p "Choose the audio's name with the extension eg: audio.mp4  > " output
+echo ""
+echo -e $white"Converting the video ..."
+echo ""
+ffmpeg -i $input $output
+echo ""
+echo -e $green"Converting completed"

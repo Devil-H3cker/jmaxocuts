@@ -1,0 +1,38 @@
+#!/bin/bash
+
+red='\e[1;31m'
+green='\e[1;32m'
+blue='\e[1;34m'
+purple='\e[1;35m'
+cyan='\e[1;36m'
+white='\e[1;37m'
+yellow='\e[1;33m'
+
+
+echo ""
+echo ""
+echo -e $yellow" _____________________________________________"
+echo -e $yellow"|"$green" Command:  " $yellow"|" $white"Description:"
+echo -e $yellow"|____________|________________________________"
+echo -e $yellow"|"$green" 1) help   " $yellow"|" $white"Show this menu."
+echo -e $yellow"|____________|________________________________"
+echo -e $yellow"|"$green" 2) msf    " $yellow"|" $white"Open msfconsole."
+echo -e $yellow"|____________|________________________________"
+echo -e $yellow"|"$green" 3) eip    " $yellow"|" $white"Show your public IP."
+echo -e $yellow"|____________|________________________________"
+echo -e $yellow"|"$green" 4) flash  " $yellow"|" $white"Open the flash light."
+echo -e $yellow"|_____________________________________________"
+echo -e $yellow"|"$green" 5) copy   " $yellow"|" $white"Copy a file code to your"
+echo -e $yellow"|            |"  $white"clipboard, ex: $ cat test.sh | copy"
+echo -e $yellow"|_____________________________________________"
+echo -e $yellow"|"$green" 6) mp3    " $yellow"|" $white"Convert video to an audio."
+echo -e $yellow"|____________|________________________________"
+echo -e $yellow"|"$green" 7) youtube" $yellow"|" $white"To download from youtube."
+echo -e $yellow"|____________|________________________________"
+echo -e $yellow"|"$green" 8) msfv   " $yellow"|" $white"To create msf payload using venom"
+echo -e $yellow"|____________|________________________________"
+
+
+
+echo ""
+echo ""

@@ -1,0 +1,51 @@
+#!/bin/bash
+red='\e[1;31m'
+green='\e[1;32m'
+yellow='\e[1;33m'
+white='\e[1;37m'
+
+clear
+mkdir /sdcard/'Termux Download'
+mkdir /sdcard/'Termux Download'/audio
+mkdir /sdcard/'Termux Download'/video
+echo " codded by jmax , all rights reserved @ https://www.github.com/jmaxojan" > /sdcard/'Termux Download'/jmax.txt
+clear
+echo -e $green
+echo ""
+echo -e $red
+figlet YouTube
+echo ""
+echo -e $white" • codded by jmax , all rights reserved @ https://www.github.com/jmaxojan"
+echo ""
+echo ""
+echo -e $yellow"《 1 》 Video.             《 2 》 Audio."
+echo ""
+echo ""
+echo -e $green
+read -p "Choose what you want to download > " type
+	echo ""
+	if [ $type == 1 ]
+	then
+	cd /sdcard/'Termux Download'/video
+	echo -e $white
+	read -p "Paste the YouTube video's url to download it > " vid
+	echo ""
+	youtube-dl $vid
+	echo ""
+	echo ""
+	echo -e $green"Downloading Compleated, you will find it in /sdcard/Termux Download"
+	elif [ $type == 2 ]
+	then
+	cd /sdcard/'Termux Download'/audio
+	echo -e $white
+	read -p "Paste the YouTube video's url to download it > " aud
+	echo ""
+	youtube-dl -x $aud
+	echo ""
+	echo ""
+	echo -e $green"Downloading Compleated, you will find it in /sdcard/Termux Download, you can change the extension to .mp3 if you want"
+	else
+	echo -e $red"Wronge choice , please choose again"
+	sleep 4
+	echo hi
+	fi
