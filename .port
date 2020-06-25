@@ -1,0 +1,67 @@
+#!/bin/bash
+red='\e[1;31m'
+green='\e[1;32m'
+blue='\e[1;34m'
+purple='\e[1;35m'
+cyan='\e[1;36m'
+white='\e[1;37m'
+yellow='\e[1;33m'
+clear
+echo
+echo -e $green
+figlet Port
+echo 
+echo 
+echo -e $white" • all rights reserved @ https://www.github.com/jmaxojan"
+echo
+echo -e $red
+echo -e "《 1 》 port 80 "
+echo
+echo -e "《 2 》 port tcp  "
+echo -e $white
+read -p "choose a port forwarder > " port
+if [ $port == 1 ]
+then
+echo
+echo -e $yellow
+read -p " ~- subdomain > " subd
+echo 
+read -p " ~- forwarder port > " forp
+echo
+echo -e $white"
+  -~ options
+        |
+        |
+        |------=> subdomain =: $subd
+        |
+        |------=> forwarded port =: $forp
+        |__________________________________
+"
+echo -e $green"result : "
+echo
+ssh -R $subd:80:127.0.0.1:$forp serveo.net
+elif [ $port == 2 ]
+then
+echo -e $yellow
+read -p " ~- Lport > " lport
+echo
+read -p " ~- Fport > " fport
+echo
+echo -e $white"
+ ~- options
+       |
+       |
+       |-----=> Lport =: $lport
+       |
+       |-----=> Fport =: $fport
+       |__________________________
+	   
+"
+echo -e $green"result : "
+echo
+ssh -R $lport:127.0.0.1:$fport serveo.net
+else
+echo -e $red"WRONGE CHOOICE...!"
+sleep 2.3
+port
+fi
